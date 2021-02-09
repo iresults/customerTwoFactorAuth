@@ -53,6 +53,10 @@ define([
                     loginAction(loginData).always(function () {
                         $('body').trigger('processStop');
                         $(self.loginButton).attr('disabled', false);
+
+                        /* Re-enable all login buttons */
+                        const loginButton = $(self.loginFormSelector).find(self.buttonSelector);
+                        loginButton.attr('disabled', false);
                     });
                 }
             });
